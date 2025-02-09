@@ -1,0 +1,30 @@
+{
+  "name": "firstproject",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "| รหัสนักศึกษา  | ชื่อ-นามสกุล |\r |--------------|----------------------|\r | **67130815** | กรวิชญ์ ตรีประพิณ |\r | **67124461** | ทัศนสิทธิ์ เจริญธรรมรักษ์ |",
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "mongodb": "^6.13.0",
+    "mongoose": "^8.10.0",
+    "nodemon": "^3.1.9"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mister-K000/HEWKHAO-PROJECT.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Mister-K000/HEWKHAO-PROJECT/issues"
+  },
+  "homepage": "https://github.com/Mister-K000/HEWKHAO-PROJECT#readme"
+}

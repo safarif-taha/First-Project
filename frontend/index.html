@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ระบบการจัดการนักศึกษา</title>
+    <script defer src="script.js"></script>
+    <style>
+        /* 🌿 Modern and Smooth Design */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 100vh;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-top: 20px;
+            text-align: center;
+            letter-spacing: 2px;
+        }
+
+        form {
+            margin: 20px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            width: 100%;
+            max-width: 600px;
+        }
+
+        input {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 12px 15px;
+            font-size: 1rem;
+            color: #555;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 220px;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #3498db;
+            box-shadow: 0 2px 6px rgba(52, 152, 219, 0.3);
+        }
+
+        button {
+            background-color: #3498db;
+            color: white;
+            font-weight: 500;
+            padding: 12px 20px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            max-width: 150px;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(52, 152, 219, 0.3);
+        }
+
+        #searchBox {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 10px 15px;
+            font-size: 1rem;
+            width: 100%;
+            max-width: 250px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+
+        #searchBox:focus {
+            outline: none;
+            border-color: #3498db;
+            box-shadow: 0 2px 6px rgba(52, 152, 219, 0.3);
+        }
+
+        #searchBox::placeholder {
+            color: #aaa;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+            width: 100%;
+            max-width: 600px;
+        }
+
+        li {
+            background-color: #fff;
+            padding: 12px;
+            margin: 8px 0;
+            border-radius: 6px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1rem;
+            color: #333;
+            transition: all 0.3s ease;
+        }
+
+        li:hover {
+            background-color: #f9f9f9;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        li button {
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            padding: 6px 12px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        li button:hover {
+            background-color: #c0392b;
+            transform: translateY(-2px);
+        }
+
+        @media screen and (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            form {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            input,
+            button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>ระบบบริหารจัดการนักศึกษา</h1>
+
+    <form id="studentForm" onsubmit="submitForm(event)">
+        <input type="hidden" id="editingId">
+        <input type="text" id="studentId" placeholder="STUDENT ID" required>
+        <input type="text" id="firstName" placeholder="FIRSTNAME" required>
+        <button type="submit" id="submitButton">เพิ่ม</button>
+    </form>
+
+    <input type="text" id="searchBox" placeholder="🔍 SEARCH ID/NAME">
+    <button onclick="searchStudents()">ค้นหา</button>
+
+    <ul id="studentList"></ul>
+</body>
+
+</html>
