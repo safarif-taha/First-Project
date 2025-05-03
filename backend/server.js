@@ -14,9 +14,9 @@ mongoose.connect("mongodb://127.0.0.1:27017/studentsDB")
   .catch(err => console.error("❌ MongoDB Connection Error:", err));
 
 const StudentSchema = new mongoose.Schema({
-  studentId: { type: String, required: true, unique: true }, // รหัสนักศึกษา
-  firstName: { type: String, required: true }, // ชื่อจริง
-  lastName: { type: String, required: true } // นามสกุล
+  studentId: { type: String, required: true, unique: true }, // รหัสนักศึกษา User ID
+  firstName: { type: String, required: true }, // ชื่อจริง User Name
+  lastName: { type: String, required: true } // นามสกุล User Name
 });
 
 const Student = mongoose.model("Student", StudentSchema);
