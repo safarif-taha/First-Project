@@ -1,6 +1,6 @@
 const apiUrl = "http://localhost:3000/students";
 
-// 📌 Submit Form (Add/Edit)
+// 📌 ปุ่มซับมิท ( Edit )
 async function submitForm(event) {
     event.preventDefault();
 
